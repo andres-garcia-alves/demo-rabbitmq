@@ -16,7 +16,7 @@ namespace Sender
                 {
                     using (var channel = connection.CreateModel())
                     {
-                        channel.QueueDeclare(queue: "MSG", durable: false, exclusive: false, autoDelete: false, arguments: null);
+                        channel.ExchangeDeclare(exchange: "MSG", type: ExchangeType.Fanout);
 
                         Console.WriteLine("");
                         Console.WriteLine("RabbitMQ Demo: Sender");
@@ -48,7 +48,7 @@ namespace Sender
                         string message = command.Substring(8);
                         var body = Encoding.UTF8.GetBytes(message);
 
-                        channel.BasicPublish(exchange: "", routingKey: "MSG", basicProperties: null, body: body);
+                        channel.BasicPublish(exchange: "MSG", routingKey: "", basicProperties: null, body: body);
                         Console.WriteLine($"Message sended: '{message}'");
                         Console.WriteLine("");
                     }
