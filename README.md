@@ -19,8 +19,7 @@ Open two (or more) consoles and navigate to the desired Sender/Receiver pair. Us
 
 ### Version History
 
-v1.0 (2023.06.07) - Initial release.  
-v1.1 (2023.06.28) - Update electronic diagrams, adding case 3D model. 
+v1.0 (2021.05.01) - Initial release.  
 
 &nbsp;
 
